@@ -129,8 +129,11 @@ OCP, DIP가 잘 지켜지고 있는지에 대한 의문을 갖게 된다.
 
 
 주문 도메인 정책을 클래스 다이어그램을 나타낸 그림이다.
+![image](https://user-images.githubusercontent.com/74589038/130325096-4e1bfbe8-7167-41a0-9d20-fbadb36c9acb.png)
 
 주문 도메인 객체 다이어그램
+![image](https://user-images.githubusercontent.com/74589038/130325105-71823983-418e-46cd-84e4-3ce49aaba361.png)
+
 주문 도메인 객체 다이어그램 1
 
 회원을 메모리에서 조회하고, 정액 할인 정책(고정 금액)을 지원해도 주문 서비스를 변경하지 않아도 된다.
