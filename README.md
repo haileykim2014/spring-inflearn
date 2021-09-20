@@ -261,7 +261,7 @@ AppConfig가 의존관계를 FixDiscountPolicy RateDiscountPolicy 로 변경해�
  
   📌IoC, DI, 그리고 컨테이너  
  
- 제어의 역전 IoC(Inversion of Control)  
+1.  제어의 역전 IoC(Inversion of Control)  
 기존 프로그램은 클라이언트 구현 객체가 스스로 필요한 서버 구현 객체를 생성하고, 연결하고, 실행했다.  
 한마디로 구현 객체가 프로그램의 제어 흐름을 스스로 조종했다. 개발자 입장에서는 자연스러운 흐름이다.  
 반면에 AppConfig가 등장한 이후에 구현 객체는 자신의 로직을 실행하는 역할만 담당한다. 프로그램의 제어 흐름은 이제 AppConfig가 가져간다. 예를 들어서 OrderServiceImpl 은 필요한 인터페이스들을
@@ -271,9 +271,14 @@ AppConfig가 의존관계를 FixDiscountPolicy RateDiscountPolicy 로 변경해�
  그런 사실도 모른체 OrderServiceImpl 은 묵묵히 자신의 로직을 실행할 뿐이다.   
 이렇듯 프로그램의 제어 흐름을 직접 제어하는 것이 아니라 외부에서 관리하는 것을 제어의 역전(IoC)이라한다.  
  
- 의존관계 주입 DI(Dependency Injection)
+2.  의존관계 주입 DI(Dependency Injection)
 OrderServiceImpl 은 DiscountPolicy 인터페이스에 의존한다. 실제 어떤 구현 객체가 사용될지는 모른다.  
 의존관계는 정적인 클래스 의존 관계와, 실행 시점에 결정되는 동적인 객체(인스턴스) 의존 관계 둘을 분리해서 생각해야 한다.  
+ 
+3.   IoC 컨테이너, DI 컨테이너
+AppConfig 처럼 객체를 생성하고 관리하면서 의존관계를 연결해 주는 것을 IoC 컨테이너 또는 DI 컨테이너라 한다.  
+의존관계 주입에 초점을 맞추어 최근에는 주로 DI 컨테이너라 한다.  
+또는 어샘블러, 오브젝트 팩토리 등으로 불리기도 한다.  
  
 </div>
 </details>
