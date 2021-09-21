@@ -7,6 +7,8 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
+
 public class SingletonTest {
 
     @Test
@@ -23,8 +25,22 @@ public class SingletonTest {
         System.out.println("memberService2"+memberService1);
 
         //memberService1 != memberService2
-        Assertions.assertThat(memberService1).isNotSameAs(memberService2);
+        assertThat(memberService1).isNotSameAs(memberService2);
         //JVM에 메모리가 계속 생성되서 올라간다.
         //고객요청이 많은데 계속 객체가 생성될것 -비효율
+    }
+
+    @Test
+    @DisplayName("싱글톤 패턴을 적용한 객체 사용")
+    void singletonServiceTest(){
+        SingletonService singletonService1 = SingletonService.getInstance();
+        SingletonService singletonService2 = SingletonService.getInstance();
+
+        System.out.println("singletonService1="+singletonService1);//같은 인스턴스 객체가 출력된다.
+        System.out.println("singletonService2="+singletonService2);//같은 인스턴스 객체가 출력된다.
+
+        assertThat(singletonService1).isSameAs(singletonService2);
+        //isSameAs 객체참조비교
+        //equal 문자열비교
     }
 }
