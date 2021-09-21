@@ -284,7 +284,7 @@ AppConfig 처럼 객체를 생성하고 관리하면서 의존관계를 연결�
 
  
 <details>
-<summary> 스프링 핵심 원리 이해1 - 스프링</summary>
+<summary> 스프링 컨테이너와 스프링 빈</summary>
 <div markdown="1">
 </br>
  
