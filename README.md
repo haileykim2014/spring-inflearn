@@ -279,7 +279,14 @@ OrderServiceImpl 은 DiscountPolicy 인터페이스에 의존한다. 실제 어�
 AppConfig 처럼 객체를 생성하고 관리하면서 의존관계를 연결해 주는 것을 IoC 컨테이너 또는 DI 컨테이너라 한다.  
 의존관계 주입에 초점을 맞추어 최근에는 주로 DI 컨테이너라 한다.  
 또는 어샘블러, 오브젝트 팩토리 등으로 불리기도 한다.  
+ </div>
+</details>
+
  
+<details>
+<summary> 스프링 핵심 원리 이해1 - 스프링</summary>
+<div markdown="1">
+</br>
  
    📌 스프링 컨테이너  
 - ApplicationContext 를 스프링 컨테이너라 한다.
