@@ -297,5 +297,52 @@ AppConfig 처럼 객체를 생성하고 관리하면서 의존관계를 연결�
  스프링 빈은 applicationContext.getBean() 메서드를 사용해서 찾을 수 있다.
 - 기존에는 개발자가 직접 자바코드로 모든 것을 했다면 이제부터는 스프링 컨테이너에 객체를 스프링 빈으로 등록하고, 스프링 컨테이너에서 스프링 빈을 찾아서 사용하도록 변경되었다.
  
+    📌 스프링 빈 조회 - 상속관계    
+- 부모 타입으로 조회하면, 자식 타입도 함께 조회한다.
+- 그래서 모든 자바 객체의 최고 부모인 Object 타입으로 조회하면, 모든 스프링 빈을 조회한다.  
+ 
+- ApplicationContext는 BeanFactory의 기능을 상속받는다.  
+- ApplicationContext는 빈 관리기능 + 편리한 부가 기능을 제공한다.  
+- BeanFactory를 직접 사용할 일은 거의 없다. 부가기능이 포함된 ApplicationContext를 사용한다.  
+- BeanFactory나 ApplicationContext를 스프링 컨테이너라 한다  
+ 
+ 
 </div>
+</details>
+
+
+<details>
+<summary> 싱글톤 패턴</summary>
+<div markdown="1">
+</br>
+ 
+ 📌 싱글톤 패턴  
+ 
+- 클래스의 인스턴스가 딱 1개만 생성되는 것을 보장하는 디자인 패턴이다.  
+- 그래서 객체 인스턴스를 2개 이상 생성하지 못하도록 막아야 한다.  
+- private 생성자를 사용해서 외부에서 임의로 new 키워드를 사용하지 못하도록 막아야 한다.  
+ 
+ 
+ 📌 @Configuration    
+ 
+- @Bean만 사용해도 스프링 빈으로 등록되지만, 싱글톤을 보장하지 않는다.
+ - memberRepository() 처럼 의존관계 주입이 필요해서 메서드를 직접 호출할 때 싱글톤을 보장하지않는다.
+- 크게 고민할 것이 없다. 스프링 설정 정보는 항상 @Configuration 을 사용하자. 
+- @Bean이 붙은 메서드마다 이미 스프링 빈이 존재하면 존재하는 빈을 반환하고, 스프링 빈이 없으면 생성해서 스프링 빈으로 등록하고 반환하는 코드가 동적으로 만들어진다.
+- 덕분에 싱글톤이 보장되는 것이다.
+ 
+```
+@Bean
+public MemberRepository memberRepository() {
+
+ if (memoryMemberRepository가 이미 스프링 컨테이너에 등록되어 있으면?) {
+ return 스프링 컨테이너에서 찾아서 반환;
+ } else { //스프링 컨테이너에 없으면
+ 기존 로직을 호출해서 MemoryMemberRepository를 생성하고 스프링 컨테이너에 등록
+ return 반환
+ }
+} 
+ ``` 
+ 
+ </div>
 </details>
