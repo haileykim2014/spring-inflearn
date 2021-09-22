@@ -3,7 +3,7 @@ package hello.core.member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("memberService2")
+@Component
 public class MemberServiceImpl implements MemberService{
 
     //private final MemberRepository memberRepository = new MemoryMemberRepository();//배우가 직접 담당배우를 섭외하듯이..->환경 구성에 관한것은 config에서 하도록한다.
