@@ -347,3 +347,12 @@ public MemberRepository memberRepository() {
  
  </div>
 </details>
+
+
+<details>
+<summary> 컴포넌트 스캔</summary>
+<div markdown="1">
+</br>
+ 컴포넌트 스캔은 이름 그대로 @Component 애노테이션이 붙은 클래스를 스캔해서 스프링 빈으로 등록한다. @Component 를 붙여준다
+  </div>
+</details>
